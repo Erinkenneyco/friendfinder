@@ -12,7 +12,7 @@
 ## Installation
 ### To install the application follow the instructions below:
 
-##### git clone https://github.com/Erinkenneyco/friendfinder .git
+##### git clone git@github.com:Erinkenneyco/friendfinder.git
 ##### cd friend-finder
 ##### npm install
 ##### Running Locally
