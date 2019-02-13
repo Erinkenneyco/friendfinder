@@ -4,7 +4,7 @@
 // ==============================================================================
 
 var express = require("express");
-
+var path = require("path");
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server
@@ -18,8 +18,12 @@ var PORT = process.env.PORT || 8080;
 
 // express.json and express.urlEncoded make it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
+
 app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, './app/public')));
 
 // ================================================================================
 // ROUTER
@@ -29,7 +33,6 @@ app.use(express.json());
 
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
-
 // ==============================================================================
 // LISTENER
 // The below code effectively "starts" our server
